@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "github.com/cli-todo/cmd"
 
+func main() {
+	cmd.Execute()
 }
