@@ -9,5 +9,5 @@ func main() {
 	// cmd.Execute()
 	database.ConnectDatabase()
 	routes := routes.SetupRoutes()
-	routes.Run(":8080")
+	routes.Run(":4000")
 }

@@ -3,29 +3,26 @@ package database
 import (
 	"fmt"
 	"log"
+	"os"
 
-	"gorm.io/driver/sqlite"
+	"github.com/cli-todo/models"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	_ "modernc.org/sqlite"
 )
 
 var DB *gorm.DB
 
-type Task struct {
-	gorm.Model
-	ID          int    `json:"id"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Completed   bool   `json:"completed"`
-}
-
 func ConnectDatabase() {
 	var err error
-	DB, err = gorm.Open(sqlite.Open("tasks.db"), &gorm.Config{})
+	dsn := os.Getenv("DATABASE_URL")
+	if dsn == "" {
+		dsn = "host=localhost user=postgres password=Awaisniaz dbname=go_todo_backend port=5432 sslmode=disable"
+	}
+	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Println("Database Connected Successfully!")
-	DB.AutoMigrate(Task{})
+	DB.AutoMigrate(&models.Task{}, &models.User{})
 }
