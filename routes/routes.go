@@ -8,9 +8,6 @@ import (
 
 func SetupRoutes() *gin.Engine {
 	router := gin.Default()
-	// url := ginSwagger.URL("http://localhost:4000/swagger/doc.json")
-	// router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
-
 	authRoutes := router.Group("/auth")
 	{
 		authRoutes.POST("/register", controllers.Register)
