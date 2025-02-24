@@ -8,7 +8,6 @@ import (
 
 func SetupRoutes() *gin.Engine {
 	router := gin.Default()
-
 	authRoutes := router.Group("/auth")
 	{
 		authRoutes.POST("/register", controllers.Register)
