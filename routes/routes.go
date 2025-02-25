@@ -5,7 +5,6 @@ import (
 	"github.com/cli-todo/middlewares"
 	"github.com/gin-gonic/gin"
 )
-
 func SetupRoutes() *gin.Engine {
 	router := gin.Default()
 	authRoutes := router.Group("/auth")
