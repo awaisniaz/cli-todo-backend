@@ -1,5 +1,4 @@
 package routes
-
 import (
 	"github.com/cli-todo/controllers"
 	"github.com/cli-todo/middlewares"
