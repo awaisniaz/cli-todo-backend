@@ -22,3 +22,6 @@ func SetupRoutes() *gin.Engine {
 
 	return router
 }
+
+
+// this is the Practice Project to learn golang
