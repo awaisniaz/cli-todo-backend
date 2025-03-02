@@ -1,9 +1,11 @@
 package routes
+
 import (
 	"github.com/cli-todo/controllers"
 	"github.com/cli-todo/middlewares"
 	"github.com/gin-gonic/gin"
 )
+
 func SetupRoutes() *gin.Engine {
 	router := gin.Default()
 	authRoutes := router.Group("/auth")
@@ -23,5 +25,5 @@ func SetupRoutes() *gin.Engine {
 	return router
 }
 
-
 // this is the Practice Project to learn golang
+// this is the Current Implementation
