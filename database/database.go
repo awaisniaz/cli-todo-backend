@@ -22,7 +22,6 @@ func ConnectDatabase() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	fmt.Println("Database Connected Successfully!")
 	DB.AutoMigrate(&models.Task{}, &models.User{})
 }
